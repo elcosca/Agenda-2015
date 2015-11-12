@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Agenda</title>
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="vendor/jquery-ui.min.css" />
+		<link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.css" />
+        <link rel="stylesheet" href="assets/todo.css" />
+    </head>
+
+    <body class="well">
+        <div id="container">
+
+            <div id="header"> Agenda 2015 </div>
+
+            <div class="task-list task-container" id="pending">
+                <h3>Lunes</h3>
+            </div>
+
+            <div class="task-list task-container" id="inProgress">
+                <h3>Martes</h3>
+            </div>
+
+            <div class="task-list task-container" id="completed">
+                <h3>Miercoles</h3>
+            </div><br>
+
+			<div class="task-list task-container" id="completed">
+                <h3>Jueves</h3>
+            </div>
+
+			<div class="task-list task-container" id="completed">
+                <h3>Viernes</h3>
+            </div>
+
+			<div class="task-list task-container" id="completed">
+                <h3>Sabado</h3>
+            </div>
+
+			<div class="task-list task-container" id="completed">
+                <h3>Domingo</h3>
+            </div>
+
+
+            <div class="task-list">
+                <h3>Agregar Nota</h3>
+                <form id="todo-form">
+                    <input type="text" placeholder="Titulo" />
+                    <textarea placeholder="Descripcion"></textarea>
+                    <input type="text" id="datepicker" placeholder="Fecha (dd/mm/aaaa)" />
+					<input type="text" id="timepicker" placeholder="Horario (hh/mm)" />
+                    <input type="button" class="btn btn-primary" value="Agregar" onclick="todo.add();" />
+                </form>
+			
+				<button onclick="myFunction()">Notificacion</button>
+
+
+<script>
+function myFunction() {
+    alert("Hace lo que dice el recordatorio");
+}
+</script>
+
+
+                <input type="button" class="btn btn-primary" value="Borrar todo" onclick="todo.clear();" />
+
+                <div id="delete-div">
+                    Mueva aqui para borrar
+                </div>
+            </div>
+
+            <div style="clear:both;"></div>
+	          <script type="text/javascript"> window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');</script>
+            <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="vendor/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="assets/todo.js"></script>
+			<script type="text/javascript" src="bower_components/pickadate/lib/picker.js"></script>
+			<script type="text/javascript" src="bower_components/pickadate/lib/picker.time.js"></script>
+
+            <script type="text/javascript">
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+				$('#timepicker').pickatime()
+                $(".task-container").droppable();
+                $(".todo-task").draggable({ revert: "valid", revertDuration:200 });
+                todo.init();
+            </script>
+
+        </div>
+    </body>
+</html>
