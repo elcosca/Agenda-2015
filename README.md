@@ -3,6 +3,8 @@ Consiste en una agenda que nos permite organizar los diferentes eventos que teng
 
 ## Instalacion
 Dentro de la Carpeta Agenda-2015 tirar los siguientes comandos:
+
 npm install
+
 node_modules/.bin/electron .
 
