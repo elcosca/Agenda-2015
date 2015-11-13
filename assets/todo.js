@@ -9,6 +9,7 @@ data = data || {};
             todoTask: "todo-task",
             todoHeader: "task-header",
             todoDate: "task-date",
+			todoHour: "task-hour",
             todoDescription: "task-description",
             taskId: "task-",
             formId: "todo-form",
@@ -17,9 +18,25 @@ data = data || {};
         }, codes = {
             "1" : "#pending",
             "2" : "#inProgress",
-            "3" : "#completed"
+            "3" : "#completed1",
+            "4" : "#completed2",
+            "5" : "#completed3",
+            "6" : "#completed4",
+            "7" : "#completed5",
         };
 
+
+
+
+function sendMail() {
+    var link = "mailto:nico.flecha14@gmail.com"
+             + "?cc=fedeelcosca230@gmail.com"
+             + "&subject=" + escape("Asunto")
+             + "&body=" + escape(document.getElementById('Acordate que hoy tenes un evento').value)
+    ;
+
+    window.location.href = link;
+}
     todo.init = function (options) {
 
         options = options || {};
@@ -104,6 +121,11 @@ data = data || {};
             "text": params.date
         }).appendTo(wrapper);
 
+		$("<div />", {
+            "class" : defaults.todoHour,
+            "text": params.hour
+        }).appendTo(wrapper);
+
         $("<div />", {
             "class" : defaults.todoDescription,
             "text": params.description
@@ -129,16 +151,19 @@ data = data || {};
 
     todo.add = function() {
         var inputs = $("#" + defaults.formId + " :input"),
-            errorMessage = "Title can not be empty",
-            id, title, description, date, tempData;
+            errorMessage = "Titulo no puede estar vacio",
+            id, title, description, date, hour, tempData;
 
-        if (inputs.length !== 4) {
+        if (inputs.length !== 6) {
+			
+		console.log(inputs);
             return;
         }
 
         title = inputs[0].value;
         description = inputs[1].value;
         date = inputs[2].value;
+		hour = inputs[3].value;
 
         if (!title) {
             generateDialog(errorMessage);
@@ -167,6 +192,7 @@ data = data || {};
         inputs[0].value = "";
         inputs[1].value = "";
         inputs[2].value = "";
+		inputs[3].value = "";
     };
 
     var generateDialog = function (message) {

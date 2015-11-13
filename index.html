@@ -3,7 +3,7 @@
         <title>Agenda</title>
 
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="vendor/jquery-ui.min.css" />
+        <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" />
 		<link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.css" />
         <link rel="stylesheet" href="assets/todo.css" />
     </head>
@@ -21,23 +21,23 @@
                 <h3>Martes</h3>
             </div>
 
-            <div class="task-list task-container" id="completed">
+            <div class="task-list task-container" id="completed1">
                 <h3>Miercoles</h3>
             </div><br>
 
-			<div class="task-list task-container" id="completed">
+			<div class="task-list task-container" id="completed2">
                 <h3>Jueves</h3>
             </div>
 
-			<div class="task-list task-container" id="completed">
+			<div class="task-list task-container" id="completed3">
                 <h3>Viernes</h3>
             </div>
 
-			<div class="task-list task-container" id="completed">
+			<div class="task-list task-container" id="completed4">
                 <h3>Sabado</h3>
             </div>
 
-			<div class="task-list task-container" id="completed">
+			<div class="task-list task-container" id="completed5">
                 <h3>Domingo</h3>
             </div>
 
@@ -48,23 +48,23 @@
                     <input type="text" placeholder="Titulo" />
                     <textarea placeholder="Descripcion"></textarea>
                     <input type="text" id="datepicker" placeholder="Fecha (dd/mm/aaaa)" />
-<<<<<<< HEAD
 					<input type="text" id="timepicker" placeholder="Horario (hh/mm)" />
                     <input type="button" class="btn btn-primary" value="Agregar" onclick="todo.add();" />
                 </form>
 			
-				<button onclick="myFunction()">Notificacion</button>
+				<button type="button" class="btn btn-primary" value="Borrar todo" onclick="notificacion()">Notificacion</button>
 
 
-<script>
-function myFunction() {
-    alert("Hace lo que dice el recordatorio");
-}
-</script>
+				<script>
+					function notificacion() {
+    				alert("Hace lo que dice el recordatorio");
+					}
+				</script>
 
-					<!-- <input type="text" id="datepicker" placeholder="Horario (hh/mm)" /> -->
-                    <input type="button" class="btn btn-primary" value="Agregar" onclick="todo.add();" />
-                </form>
+				<textarea id="myText">
+    			Ingresa el Mail Aqui
+				</textarea>
+				<button onclick="sendMail(); return false">Enviar</button> 
 
                 <input type="button" class="btn btn-primary" value="Borrar todo" onclick="todo.clear();" />
 
@@ -76,7 +76,7 @@ function myFunction() {
             <div style="clear:both;"></div>
 	          <script type="text/javascript"> window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');</script>
             <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="vendor/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
             <script type="text/javascript" src="assets/todo.js"></script>
 			<script type="text/javascript" src="bower_components/pickadate/lib/picker.js"></script>
 			<script type="text/javascript" src="bower_components/pickadate/lib/picker.time.js"></script>
