@@ -8,3 +8,5 @@ npm install
 
 ./node_modules/.bin/electron .
 
+./node_modules/bower/bin/bower install
+
