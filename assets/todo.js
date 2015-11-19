@@ -1,9 +1,27 @@
+
+
+function avisar(queavisar){
+    alert(queavisar)
+ 
+}
+
+var currentdate = new Date(); 
+var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+
 var todo = todo || {},
     data = JSON.parse(localStorage.getItem("todoData"));
 
 data = data || {};
 
 (function(todo, data, $) {
+
+	
 
     var defaults = {
             todoTask: "todo-task",
@@ -16,27 +34,28 @@ data = data || {};
             dataAttribute: "data",
             deleteDiv: "delete-div"
         }, codes = {
-            "1" : "#pending",
-            "2" : "#inProgress",
+            "1" : "#completed",
+            "2" : "#completed0",
             "3" : "#completed1",
             "4" : "#completed2",
             "5" : "#completed3",
             "6" : "#completed4",
             "7" : "#completed5",
+			"8" : "#completed6",
         };
 
 
 
 
-function sendMail() {
-    var link = "mailto:nico.flecha14@gmail.com"
-             + "?cc=fedeelcosca230@gmail.com"
-             + "&subject=" + escape("Asunto")
-             + "&body=" + escape(document.getElementById('Acordate que hoy tenes un evento').value)
-    ;
+//function sendMail() {
+    //var link = "mailto:nico.flecha14@gmail.com"
+           //+ "?cc=fedeelcosca230@gmail.com"
+           //+ "&subject=" + escape("Asunto")
+           //+ "&body=" + escape(document.getElementById('Acordate que hoy tenes un evento').value);
 
-    window.location.href = link;
-}
+    //window.location.href = link;
+//}
+
     todo.init = function (options) {
 
         options = options || {};
@@ -63,7 +82,7 @@ function sendMail() {
 
                             // Generating new element
                             generateElement(object);
-
+ 
                             // Updating Local Storage
                             data[id] = object;
                             localStorage.setItem("todoData", JSON.stringify(data));
@@ -230,5 +249,18 @@ function sendMail() {
         localStorage.setItem("todoData", JSON.stringify(data));
         $("." + defaults.todoTask).remove();
     };
+
+function chequearSiHayCosasParaAvisar(){
+	for (date.getAttribute("hour") > currentdate){
+	alert ("jojojooj")
+}
+}
+
+setInterval(function() {
+    chequearSiHayCosasParaAvisar();
+},  60*1000);	
+
+
+
 
 })(todo, data, jQuery);
