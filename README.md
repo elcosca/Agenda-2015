@@ -6,7 +6,9 @@ Dentro de la Carpeta Agenda-2015 tirar los siguientes comandos:
 
 npm install
 
+./node_modules/bower/bin/bower install
+
 ./node_modules/.bin/electron .
 
-./node_modules/bower/bin/bower install
+
 
