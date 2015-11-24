@@ -4,7 +4,7 @@
 
 body {
     /* Override bootstrap properties */
-    background-color: Red !important;
+    background-image: url("https://wallpaperscraft.com/image/background_color_spectrum_lines_38913_1920x1080.jpg"); !important;
     border: 0 !important;
 }
 
@@ -20,14 +20,14 @@ body {
     font-size: 30px;
     text-align: center;
     margin-bottom: 15px;
-    color: #000000;
+    color: #FFFF00;
 }
 
 .task-list{
     width: 250px;
     float: left;
     margin: 0 5px;
-    background-color: #FFFF00;
+    background-color: #FFFFFF;
     min-height: 240px;
     border-radius: 10px;
     padding-bottom: 15px;
@@ -44,7 +44,7 @@ body {
 
 .todo-task{
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #00FFFF	;
     width: 230px;
     margin: 5px;
     padding: 5px;
