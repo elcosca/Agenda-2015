@@ -1,0 +1,19 @@
+{
+  "name": "agenda-electron",
+  "description": "",
+  "main": "main.js",
+  "license": "MIT",
+  "homepage": "https://github.com/elcosca/Agenda-2015",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pickadate": "~3.5.6",
+    "jquery-ui": "~1.11.4"
+  }
+}
