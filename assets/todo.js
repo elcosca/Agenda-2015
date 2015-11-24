@@ -246,19 +246,19 @@ data = data || {};
 
     todo.clear = function () {
         data = {};
-        localStorage.setItem("todoData", JSON.stringify(data));
+        localStorage.setItem("todoData", JSON.stringify(data));////
         $("." + defaults.todoTask).remove();
     };
 
-function chequearSiHayCosasParaAvisar(){
-	for (date.getAttribute("hour") > currentdate){
-	alert ("jojojooj")
-}
-}
+//function chequearSiHayCosasParaAvisar(){
+	//for (date.getAttribute("hour") > currentdate){
+	//alert ("jojojooj")
+//}
+//}
 
-setInterval(function() {
-    chequearSiHayCosasParaAvisar();
-},  60*1000);	
+//setInterval(function() {
+    //chequearSiHayCosasParaAvisar();
+//},  //60*1000);	
 
 
 
