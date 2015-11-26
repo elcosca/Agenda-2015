@@ -1,36 +1,7 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-$.ajax({
-  type: “POST”,
-  url: “https://mandrillapp.com/api/1.0/messages/send.json”,
-  data: {
-    ‘key’: ‘AfJDT9HBpBp7WE6aOznXew’,
-    ‘message’: {
-      ‘from_email’: ‘YOUR@EMAIL.HERE’,
-      ‘to’: [
-          {
-            ‘email’: ‘RECIPIENT_NO_1@EMAIL.HERE’,
-            ‘name’: ‘RECIPIENT NAME (OPTIONAL)’,
-            ‘type’: ‘to’
-          },
-          {
-            ‘email’: ‘RECIPIENT_NO_2@EMAIL.HERE’,
-            ‘name’: ‘ANOTHER RECIPIENT NAME (OPTIONAL)’,
-            ‘type’: ‘to’
-          }
-        ],
-      ‘autotext’: ‘true’,
-      ‘subject’: ‘YOUR SUBJECT HERE!’,
-      ‘html’: ‘YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!’
-    }
-  }
- }).done(function(response) {
-   console.log(response); // if you're into that sorta thing
- });
 
 
 function avisar(queavisar){
-    alert(queavisar)
+   alert(queavisar)
  
 }
 
@@ -74,16 +45,6 @@ data = data || {};
         };
 
 
-
-
-//function sendMail() {
-    //var link = "mailto:nico.flecha14@gmail.com"
-           //+ "?cc=fedeelcosca230@gmail.com"
-           //+ "&subject=" + escape("Asunto")
-           //+ "&body=" + escape(document.getElementById('Acordate que hoy tenes un evento').value);
-
-    //window.location.href = link;
-//}
 
     todo.init = function (options) {
 
@@ -280,17 +241,54 @@ data = data || {};
         $("." + defaults.todoTask).remove();
     };
 
-//function chequearSiHayCosasParaAvisar(){
-	//for (date.getAttribute("hour") > currentdate){
-	//alert ("jojojooj")
-//}
-//}
+function chequearSiHayCosasParaAvisar(){
+	console.log(data)
 
-//setInterval(function() {
-    //chequearSiHayCosasParaAvisar();
-//},  //60*1000);	
+	for (var key in data) {
+	   if (data.hasOwnProperty(key)) {
+		   var obj = data[key];
+		   console.log(obj.date);
+		   
+		}
+	}
 
+	//for (data.get("hour") > currentdate){
+	//$('#enviaremail').click(function() {
+  /*$.ajax({
+    type: "POST",
+  url: "https://mandrillapp.com/api/1.0/messages/send.json",
+  data: {
+    'key': 'AfJDT9HBpBp7WE6aOznXew',
+    'message': {
+      'from_email': 'fedeelcosca230@gmail.com',
+      'to': [
+          {
+            'email': 'fedeelcosca230@gmail.com',
+            'name': 'RECIPIENT NAME (OPTIONAL)',
+            'type': 'to'
+          },
+          {
+            'email': 'fedeelcosca230@gmail.com',
+            'name': 'ANOTHER RECIPIENT NAME (OPTIONAL)',
+            'type': 'to'
+          }
+        ],
+      'autotext': 'true',
+      'subject': 'Evento',
+      'html': 'Ahora mismo tenes un evento'
+    }
+  }
+ }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+  });
+});
 
+}*/
+}
+
+setInterval(function() {
+    chequearSiHayCosasParaAvisar();
+},  60*1000);	
 
 
 })(todo, data, jQuery);
