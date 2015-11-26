@@ -252,9 +252,10 @@ function chequearSiHayCosasParaAvisar(){
 		}
 	}
 
-	//for (data.get("hour") > currentdate){
-	//$('#enviaremail').click(function() {
-  /*$.ajax({
+var d1 = obj.date();
+var d2 = currentdate(d1);
+if (d1 > d2){
+  $.ajax({
     type: "POST",
   url: "https://mandrillapp.com/api/1.0/messages/send.json",
   data: {
@@ -282,9 +283,12 @@ function chequearSiHayCosasParaAvisar(){
    console.log(response); // if you're into that sorta thing
   });
 });
-
-}*/
 }
+
+}
+
+
+
 
 setInterval(function() {
     chequearSiHayCosasParaAvisar();
